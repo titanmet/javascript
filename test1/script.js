@@ -1,8 +1,8 @@
 "use strict";
-var money = +prompt("Ваш бюджет на месяц?",''),
+let money = +prompt("Ваш бюджет на месяц?",''),
     time = prompt("Введите дату в формате YYYY-MM-DD",'');
 
-var appData = {
+let appData = {
     budget: money,
     timeData: time,
     expenses: {},
@@ -18,9 +18,10 @@ for(let i=0;i<2;i++){
         appData.expenses[a]=b;
     }else{
         alert("Произошла ошибка !");
+        appData.expenses[a]=0;
     }
 };
-appData.moneyPerDay=appData.budget/30;
+appData.moneyPerDay=Math.round(appData.budget/30);
 alert("Ежедневный бюджет: " + appData.moneyPerDay);
 if(appData.moneyPerDay<100){
     console.log("Уровень дохода минимальный.");
