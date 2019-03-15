@@ -12,10 +12,10 @@ let appData = {
 function detectDayBudget() {
     money = +prompt("Ваш бюджет на месяц?",'');
     time = prompt("Введите дату в формате YYYY-MM-DD",'');
-
     while(isNaN(money) || money=='' || money==null){
         money = +prompt("Ваш бюджет на месяц?",'');
     }
+
     for(let i=0;i<2;i++){
         let a=prompt("Введите обязательную статью расходов в этом месяце",''),
             b=prompt("Во сколько обойдется?",'');
@@ -25,8 +25,10 @@ function detectDayBudget() {
             i=i-1;
         }
     }
+    
     appData.moneyPerDay=(appData.budget/30).toFixed();
 }
+
 detectDayBudget();
 
 function detectLevel(){
