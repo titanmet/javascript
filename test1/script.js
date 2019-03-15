@@ -67,7 +67,7 @@ let appData = {
             }
             document.write('Способы доп. заработка: ');
             appData.income.forEach(function(item,i,income) {
-                document.write(item+' ');
+                document.write((i+1)+'.'+item+' ');
             });
 
         } 
