@@ -61,9 +61,21 @@ function setClock(id,endtime){
 
     function updateClock(){
         let t = getTimeRemaning(endtime);
-        hours.textContent = t.hours;
-        minutes.textContent = t.minutes;
-        seconds.textContent = t.second;
+        if (t.hours.toString().length==1){
+            hours.textContent = '0'+t.hours;    
+        } else {
+            hours.textContent = t.hours;
+        }
+        if (t.minutes.toString().length==1){
+            minutes.textContent = '0'+t.minutes;    
+        } else {
+            minutes.textContent = t.minutes;
+        }
+        if (t.second.toString().length==1){
+            seconds.textContent = '0'+t.second;
+        } else {
+            seconds.textContent = t.second;
+        }
 
         if(t.total<=0){
             clearInterval(timeInterval);
