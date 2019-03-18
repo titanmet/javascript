@@ -102,4 +102,24 @@ close.addEventListener('click',function() {
     document.body.style.overflow = '';
 });
 
+// form
+
+let message = {
+    loading: 'Загрузка...' ,
+    success: 'Спасибо ! Скоро мы с вами свяжемся.',
+    failure: 'Ошибка !'
+}
+
+let form = document.querySelector('.main-form'),
+    input = document.getElementsByTagName('input'),
+    statusMessage = document.createElement('div');
+
+    statusMessage.classList.add('status');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    form.appendChild(statusMessage);
+    
+});
+
 });
